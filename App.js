@@ -6,10 +6,10 @@ export default class FetchExample extends React.Component {
   constructor(props){
     super(props);
     this.state ={ isLoading: true}
+    this.state = {
+    who: 0
+  };
   }
-
-
-
 
 
   componentDidMount(){
@@ -35,10 +35,10 @@ export default class FetchExample extends React.Component {
     //item's name + some text
     Alert.alert(' hello ' + item.name  )
       console.log('hello ' + item.name )
+
     }
   }
   render(){
-
     if(this.state.isLoading){
       return(
         <View style={{flex: 1, padding: 20}}>
@@ -51,6 +51,7 @@ export default class FetchExample extends React.Component {
     //
     // </TouchableHighlight>
     return(
+
       <View style={{paddingTop:100, width:'100%', left:'10%'}}>
 
       <FlatList data={this.state.dataSource}
@@ -62,6 +63,7 @@ export default class FetchExample extends React.Component {
       <TouchableHighlight onPress={this._onPressButton(item)} underlayColor="white">
       <View style={styles.button}>
         <Text style={styles.buttonText}>{item.id}. {item.name}, {item.releaseYear}</Text>
+        <Text className="Hello"></Text>
         </View>
         </TouchableHighlight>
     }
